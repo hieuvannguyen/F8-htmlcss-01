@@ -27,27 +27,49 @@
   <meta name="theme-color" content="#ffffff">
 
   <link rel="stylesheet" href="./assets/css/reset.css">
-  <link rel="stylesheet" href="./assets/fonts/stylesheet.css">
   <link rel="stylesheet" href="./assets/css/style.css">
+  <link rel="stylesheet" href="./assets/css/responsive.css">
+  <link rel="stylesheet" href="./assets/fonts/stylesheet.css">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Lato:wght@700&display=swap" rel="stylesheet">
 </head>
 
 <body>
+  <!-- PC header -->
   <header class="fixed-header">
     <div class="content">
       <nav class="navbar" id="home">
+        <!-- Tablet - Mobile menu -->
+        <label for="menu-checkbox" class="toggle-menu">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512">
+            <path fill="currentColor"
+              d="M0 96C0 78.3 14.3 64 32 64H416c17.7 0 32 14.3 32 32s-14.3 32-32 32H32C14.3 128 0 113.7 0 96zM0 256c0-17.7 14.3-32 32-32H416c17.7 0 32 14.3 32 32s-14.3 32-32 32H32c-17.7 0-32-14.3-32-32zM448 416c0 17.7-14.3 32-32 32H32c-17.7 0-32-14.3-32-32s14.3-32 32-32H416c17.7 0 32 14.3 32 32z" />
+          </svg>
+        </label>
         <!-- Logo -->
         <a href="#home"><img src="./assets/img/logo.svg" alt="besnik." class="logo"></a>
         <!-- Nav -->
-        <ul class="nav-list">
-          <li><a href="https://hieuvannguyen.github.io/F8-htmlcss-01" class="nav-item-link">Home</a>
+        <ul class="nav-list" id="pc-nav">
+          <li>
+            <!-- <a href="https://hieuvannguyen.github.io/F8-htmlcss-01"
+                      class="nav-item-link">Home</a> -->
+            <a href="#home" class="nav-item-link">Home</a>
           </li>
           <li><a href="#features" class="nav-item-link">Features</a></li>
           <li><a href="#services" class="nav-item-link">Services</a></li>
           <li><a href="#resources" class="nav-item-link">Resources</a></li>
           <li><a href="#contact" class="nav-item-link">Contact</a></li>
+          <li>
+            <a href="#resources" class="nav-item-link nav-item-link--show-on-mobile">
+              Sign in
+            </a>
+          </li>
+          <li>
+            <a href="#contact" class="nav-item-link nav-item-link--show-on-mobile">
+              Sign up
+            </a>
+          </li>
         </ul>
         <!-- Action -->
         <div class="action">
@@ -56,6 +78,26 @@
           <a href="#!" class="action-link btn">Sign up</a>
         </div>
       </nav>
+    </div>
+  </header>
+  <!-- Tablet/Mobile header -->
+  <header class="mobile-header">
+    <input type="checkbox" name="" id="menu-checkbox" class="menu-checkbox" hidden>
+    <label for="menu-checkbox" class="menu-overlay"></label>
+    <div class="menu-drawer">
+      <!-- Logo -->
+      <a href="#home">
+        <img src="./assets/img/logo.svg" alt="besnik." class="menu-logo">
+      </a>
+
+      <!-- Nav -->
+      <ul class="menu-nav-list" id="mobile-nav">
+      </ul>
+      <script>
+        const pcNav = document.querySelector('#pc-nav');
+        const mobileNav = document.querySelector('#mobile-nav');
+        mobileNav.innerHTML = pcNav.innerHTML;
+      </script>
     </div>
   </header>
   <main>
